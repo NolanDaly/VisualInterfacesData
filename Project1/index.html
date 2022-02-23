@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Project 1: Bad Air (Nolan Daly)</title>
+        <meta charset="UTF-8">
+        <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>    
+    <!-- Add HTML content, SVG drawing area, ... -->
+    <div class="citation">Data: US Environmental Protection Agency. Air Quality System Data Mart [internet database] available via 
+        <a href="https://www.epa.gov/outdoor-air-quality-data">https://www.epa.gov/outdoor-air-quality-data</a>. Accessed Feb. 10, 2022.</div>
+    <div class="citation">Libraries: d3.v6</div>
+
+    <div class="slidecontainer">
+        <input type="range" min="1980" max="2021" value="2021" class="slider" id="yearslider">
+    </div>
+
+    <p>Selected year: <span id="yearval"></span></p>
+    <br><form id = "disptype" class = "selectbox">
+        <select id = "disptypebox">
+            <option value = 'Median AQI'>Median AQI</option>
+            <option value = '90th Percentile AQI'>90th Percentile AQI</option>
+            <option value = 'Max AQI'>Maximum AQI</option>
+        </select>
+    </form>
+
+    <div class="main">
+        <div class = "primarymenu">
+            <p>Region 1:</p>
+            <form id = "state1" class = "selectbox">
+                <select id = "state1box">
+                    <option>State/Region</option>
+                </select>
+            </form>
+            <form id = "county1" class = "selectbox">
+                <select id = "county1box">
+                    <option>County</option>
+                </select>
+            </form>
+            <svg id="Vis1"></svg>
+            <svg id="Vis3"></svg>
+            <svg id="Vis5"></svg>      
+            <br><svg id="Vis7"></svg>
+            <br><svg id="Vis9"></svg>
+        </div>
+
+        <div class = "primarymenu">
+            <p>Region 2:</p>
+            <form id = "state2" class = "selectbox">
+                <select id = "state2box">
+                    <option>State/Region</option>
+                </select>
+            </form>
+            <form id = "county2" class = "selectbox">
+                <select id = "county2box">
+                    <option>County</option>
+                </select>
+            </form>
+            <svg id="Vis2"></svg>
+            <svg id="Vis4"></svg>
+            <svg id="Vis6"></svg>
+            <br><svg id="Vis8"></svg>
+            <br><svg id="Vis10"></svg>  
+        </div>
+        
+        <div id="tooltip"></div>
+
+        <!-- D3 bundle -->
+        <script src="js/d3.v6.min.js"></script>
+
+        <!-- Our JS code - INCLUDING the new files-->
+        <script src="js/main.js"></script>
+        <script src="js/Vis1.js"></script>
+        <script src="js/BarChart.js"></script>
+        <script src="js/PieChart.js"></script>
+    </div>
+    </body>
+</html>
